@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Prescription Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl mb-4">Daily Prescription Report</h2>
+    <table class="w-full border">
+        <thead>
+        <tr class="bg-gray-200">
+            <th class="p-2">Date</th>
+            <th class="p-2">Prescription Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="report : ${reportData}">
+            <td class="p-2" th:text="${report[0]}"></td>
+            <td class="p-2" th:text="${report[1]}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/prescriptions" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 inline-block">Back to Prescriptions</a>
+</div>
+</body>
+</html>
